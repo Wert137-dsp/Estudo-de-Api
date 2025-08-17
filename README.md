@@ -9,10 +9,10 @@ Gympass style app
 - [X] " obter o perfil de um usuário; logado;
 - [X] " obter o número de check-ins realizados pelo usuário logado;
 - [X] " o usuário obter seu histório de check-ins;
-- [ ] " o usuário buscar academias próximas;
+- [X] " o usuário buscar academias próximas;
 - [X] " o usuário buscar academias pelo nome;
 - [X] " o usuário realizar check-in em uma academia;
-- [ ] " validar o check-in de um usuário;
+- [X] " validar o check-in de um usuário;
 - [X] " cadastrar uma academia;
 
 ##RNs
