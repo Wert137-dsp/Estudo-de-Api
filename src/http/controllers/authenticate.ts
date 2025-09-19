@@ -8,7 +8,7 @@ import { makeAuthenticateService } from "@/services/factories/make-authenticate-
 export async function authenticate(req:FastifyRequest, res:FastifyReply) {
 
     const authenticateBodySchema = z.object({
-        email: z.string(),
+        email: z.string().email(),
         password: z.string().min(6)
     })
 
@@ -17,10 +17,23 @@ export async function authenticate(req:FastifyRequest, res:FastifyReply) {
     try {
         const authenticateService = makeAuthenticateService()
 
-        await authenticateService.execute({
+        const {user} = await authenticateService.execute({
             email,
             password,
         })
+
+        const token = await res.jwtSign(
+            {},
+            {
+            sign: {
+                sub: user.id,
+            }
+        })
+
+         return res.status(200).send({
+
+            token,
+         })
         
     } catch (error) {
 
@@ -34,5 +47,5 @@ export async function authenticate(req:FastifyRequest, res:FastifyReply) {
 
         throw error   
     }
-    return res.status(200).send()
+   
 }
