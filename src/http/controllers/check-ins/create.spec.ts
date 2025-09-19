@@ -25,7 +25,6 @@ describe("Create CheckIn (e2e)", () => {
 
          const gym = await prisma.gym.create({
             data: {
-                id: randomUUID(),
                 title: "Javascript Gym",
                 description: "Teste",
                 phone: "Teste",
