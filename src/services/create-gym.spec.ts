@@ -13,7 +13,7 @@ describe("Create Gym Service", () => {
         sut = new CreateGymService(gymsRepository)
     })
 
-    it.only("should be able to create gyms", async () => {
+    it("should be able to create gyms", async () => {
 
         const {gym} = await sut.execute({
 
