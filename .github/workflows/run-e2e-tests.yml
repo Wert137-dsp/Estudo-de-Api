@@ -12,9 +12,9 @@ jobs:
         ports: 
           - 5432:5432
         env:
-          - POSTGRES_USER=docker
-          - POSTGRES_PASSWORD=docker
-          - POSTGRES_DB=api_solid
+           POSTGRES_USER=docker
+           POSTGRES_PASSWORD=docker
+           POSTGRES_DB=api_solid
 
     steps:
       - uses: actions/checkout@v5
