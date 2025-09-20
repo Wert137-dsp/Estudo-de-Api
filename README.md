@@ -25,8 +25,8 @@ Bem-vindo ao desafio de construir um app fitness completo! Acompanhe seu progres
 - ✅ **Impedir dois check-ins no mesmo dia**
 - ✅ **Check-in permitido só se estiver a até 100m da academia**
 - ⏳ **Check-in só pode ser validado até 20 minutos após criado**
-- ⏳ **Somente administradores podem validar check-ins**
-- ⏳ **Somente administradores podem cadastrar academias**
+- ✅ **Somente administradores podem validar check-ins**
+- ✅ **Somente administradores podem cadastrar academias**
 
 ---
 
@@ -35,7 +35,7 @@ Bem-vindo ao desafio de construir um app fitness completo! Acompanhe seu progres
 - ✅ **Senha do usuário criptografada**
 - ✅ **Dados persistidos em banco PostgreSQL**
 - ✅ **Paginação de listas (20 itens por página)**
-- ⏳ **Identificação do usuário via JWT**  
+- ✅ **Identificação do usuário via JWT**  
   _⚡️ Em breve: conquiste o troféu "Token Master"!_
 
 ---
