@@ -20,6 +20,7 @@ app.register(fastifyJwt, {
     }
 })
 
+console.log()
 app.register(fastifyCookie)
 
 app.register(usersRoutes)
