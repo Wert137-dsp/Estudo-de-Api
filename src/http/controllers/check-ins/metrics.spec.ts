@@ -17,7 +17,7 @@ describe("Create CheckIn (e2e)", () => {
     })
     
 
-    it("it should be able to create a check-in", async () => {
+    it("it should be able to the total count of check-ins", async () => {
 
 
         const {token} = await createAndAuthenticateUser(app)
@@ -30,15 +30,32 @@ describe("Create CheckIn (e2e)", () => {
             },
         })
 
-    const response = await request(app.server)
-      .post(`/gyms/${gym.id}/check-ins`)
-      .set("Authorization", `Bearer ${token}`)
-      .send({
-        latitude: -27.2092052,
-        longitude: -49.6481091,
-      })
+        const user = await prisma.user.findFirstOrThrow()
 
-    expect(response.statusCode).toEqual(201)
+       await prisma.checkIn.createMany({
+            data: [
+
+                {
+                    gym_id: gym.id,
+                    user_id: user.id, 
+                    
+                },
+
+                {
+                    gym_id: gym.id,
+                    user_id: user.id, 
+                    
+                }
+            ]
+        })
+
    
+        const response = await request(app.server)
+        .get("/check-ins/metrics")
+        .set("Authorization", `Bearer ${token}`)
+
+        expect(response.statusCode).toEqual(200)
+        expect(response.body.checkInsCount).toEqual(2)
+
     })
 })

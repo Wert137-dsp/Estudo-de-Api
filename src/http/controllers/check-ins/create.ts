@@ -20,7 +20,7 @@ export async function create(req:FastifyRequest, res:FastifyReply) {
 
     })
 
-    const {gymId} = createCheckInParamsSchema.parse(req.body)
+    const {gymId} = createCheckInParamsSchema.parse(req.params)
     const {latitude, longitude} = createCheckInBodySchema.parse(req.body)
 
         const checkInService = makeCheckInService()
